@@ -1,0 +1,184 @@
+#hero-section {
+    padding: 3% 12%;
+    display: flex;
+    flex-direction: row;
+}
+#hero-section .left {
+    width: 50%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+#hero-section .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+#hero-section .right .logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 10px;
+}
+#hero-section h1 {
+    font-weight: 600;
+    font-size: 70px;
+}
+#hero-section p {
+    font-weight: lighter;
+    font-size: 30px;
+    margin-top: 30px;
+    text-align: justify;
+}
+#hero-section button {
+    align-self: center;
+    margin-top: 30px;
+    padding: 0.5cm;
+    font-weight: bold;
+    font-family: "Outfit";
+    background-color: #FEBD2F;
+}
+#hero-section button:hover {
+    background-color: #fdb51b;
+    cursor: pointer;
+}
+
+#courses-section {
+    padding: 3% 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #FDFDFD;
+    color: black;
+    font-size: 25px;
+}
+#courses-section input {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    filter: grayscale(100%);
+}
+
+#courses-section .top {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+#courses-section .search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 400px;
+    height: 50px;
+}
+#courses-section .search-icon {
+    padding: 8px 12px;
+}
+#courses-section .search-input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#courses-section .middle {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+#courses-section .middle .left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#courses-section .middle .left .courses-tag-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 8px 12px;
+    gap: 20px;
+    width: 170px;
+    height: 50px;
+    float: left;
+    font-family: "Outfit";
+    font-weight: bold;
+    background-color: #FDFDFD;
+}
+#courses-section .middle .left .courses-tag-button:hover {
+    background-color: #FEBD2F;
+    cursor: pointer;
+}
+
+#courses-section .middle .right {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+    gap: 50px;
+    font-size: 24px;
+    color: white;
+    padding: 0 0 0 15px;
+} 
+
+#courses-section .bottom button {
+    float: right;
+    color: black;
+    background-color: #FEBD2F;
+    padding: 8px 12px;
+    font-family: "Outfit";
+}
+#courses-section .bottom button:hover {
+    background-color: #fdb51b;
+    cursor: pointer;
+}
+
+#about-us-section {
+    padding: 3% 12%;
+    background-color: #F8F8F8;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+}
+#about-us-section .left {
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+#about-us-section .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about-us-section .right h2 {
+    font-weight: 600;
+}
+#about-us-section .right p {
+    margin-top: 70px;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: justify;
+}
+#about-us-section .right a {
+    font-family: "Outfit";
+    margin-top: 70px;
+    background-color: #10162F;
+    color: white;
+    font-size: 16px;
+    border: 1px solid #10162F ;
+    padding: 8px 12px;
+}
+#about-us-section .right a:hover {
+    background-color: #FDFDFD;
+    color: black;
+    cursor: pointer;
+}

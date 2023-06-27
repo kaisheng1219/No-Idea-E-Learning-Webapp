@@ -1,0 +1,70 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form p {
+    color: red;
+}
+
+input {
+    padding: 4px 0 4px 12px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type="password"] {
+    padding: 4px 30px 4px 12px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #FEBD2F;
+}
+
+button:hover {
+    background-color: #fdb51b;
+}
+
+.form-container {
+    background-color: white;
+    margin: 3% 35%;
+    color: #10162F;
+    padding: 20px 80px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.form-title {
+    font-size: 1.5em;
+}
+
+.form-content {
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    font-family: "Outfit";
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+
+.eye-icon {
+    font-size: 15px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
