@@ -1,6 +1,5 @@
 <?php 
     require_once "includes/connection.inc.php";
-    //session_start();
 ?>
 
 <!doctype html>
@@ -30,7 +29,7 @@
                 <h1>Login</h1>
             </div>
             <div class="form-content">
-                <form method="POST" action="" onsubmit="return false;">
+                <form method="post" action="includes/login.inc.php">
                     <div class="input-container">
                         <input name="email" type="email" placeholder="Email" required>
                     </div>
@@ -39,10 +38,8 @@
                         <i class="fa-regular fa-eye-slash eye-icon"></i>
                     </div>
                     <?php
-                        if(isset($_SESSION["error"])){
-                            $error = $_SESSION["error"];
-                            echo "<p>$error</p>";
-                        }
+                        if(isset($_GET["error"]))
+                            echo "<p>Credentials not found!</p>";
                     ?>  
                     <button type="submit" name="login">Login</button>
 
@@ -56,32 +53,3 @@
     <?php require_once "footer.php"; ?>
 </body>
 </html>
-
-
-<?php
-    if (isset($_POST["login"])) {
-        $email = $_POST["email"];
-        $password = $_POST['password'];
-    }
-
-        // $sql = "SELECT * FROM user WHERE user_email = $email AND user_password = $password;";
-        // $result = mysqli_query($connect, $sql);
-        
-        // if(!$result) {
-        //     die("no such user!");
-        //     $_SESSION["error"] = "No such user!";
-        // }
-        // else {
-            
-            // $_SESSION["user_email"] = $result['user_email'];
-
-            // if ($result['user_role'] == "provider")
-            //     header("location: provider/index.php"); 
-            // else if ($result['user_role'] == "instructor")
-            //     header("location: instructor/index.php"); 
-            // else
-            //     header("location: student/index.php"); 
-    //     }
-    // }
-    // session_unset();
-?>

@@ -4,9 +4,9 @@ function pwdMatch($pwd, $pwdRepeat) {
     return $pwd !== $pwdRepeat ? true : false;
 }
 
-function userExist($conn, $email) {
+function userExist($connect, $email) {
     $sql = "SELECT * FROM user WHERE user_email = ?";
-    $stmt = mysqli_stmt_init($conn);
+    $stmt = mysqli_stmt_init($connect);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../register.php?error=stmtfailed");
         exit();
@@ -17,7 +17,7 @@ function userExist($conn, $email) {
 
     $result = mysqli_stmt_get_result($stmt);
     if ($row = mysqli_fetch_assoc($result))
-        return $row;
+        return $row;    
     else 
         return false;
     
@@ -38,6 +38,34 @@ function createStudent($connect, $name, $age, $email, $pwd) {
     mysqli_stmt_close($stmt);
     header("location: ../register.php?error=none");
     exit();
+}
+
+function loginUser($connect, $email, $pwd) {
+    $userExist = userExist($connect, $email);
+    if ($userExist === false) {
+        header("location: ../login.php?error=wrongLogin");
+        exit();
+    }
+
+    $pwdHashed = $userExist["user_password"];
+    $checkedPwd = password_verify($pwd, $pwdHashed);
+
+    if ($checkedPwd === false) {
+        header("location: ../login.php?error=wrongLogin");
+        exit();
+    } else if ($checkedPwd === true) {
+        session_start();
+        $_SESSION["user_email"] =  $userExist["user_email"];
+        $_SESSION["user_role"] =  $userExist["user_role"];
+
+        if ($userExist["user_role"] == "provider")
+            header("location: ../provider/course_add.php");
+        else if ($userExist["user_role"] == "instructor")
+            header("location: ../instructor/course_view.php");
+        else if ($userExist["user_role"] == "student")
+            header("location: ../instructor/course_register.php");
+        exit();
+    }
 }
 
 ?>
