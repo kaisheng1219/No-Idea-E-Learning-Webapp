@@ -1,0 +1,27 @@
+.actions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.add-button {
+    padding: 0;
+    background-color:transparent;
+}
+.add-button a {
+    display: block;
+    padding: 5px 20px;
+    width: 100%;
+}
+
+.add-button a:hover {
+    background-color: #10162F;
+}
+
+.add-button a:hover i {
+    color: white;
+}

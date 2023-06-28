@@ -75,6 +75,14 @@ main {
     overflow-y:scroll;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
 section {
     color: black;
     background-color: #FFFAEF;
@@ -116,6 +124,40 @@ td {
     vertical-align: middle;
     padding: 5px 20px;
     font-size: 20px;
+}
+
+button {
+    color: #FFFAEF;
+    background-color: #10162f;
+    border: 2px solid black;
+    width: 100px;
+}
+
+button:hover {
+    color: #10162f;
+    cursor: pointer;
+    background-color: #FFFAEF;
+}
+
+input, textarea {
+    padding: 4px 0 4px 12px;
+    border-radius: 5px;
+    border: 3px solid black;
+    font-size: 20px;
+    width: 100%;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(0, 0, 0, 0.576);
+}
+
+input[type="date"] {
+    width: 20%;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
 }
 
 .active {
@@ -166,6 +208,26 @@ td {
     text-align: center;
     margin: 20px 0 0 0;
     font-weight: bold;
+}
+
+#cancel-button, #return-button {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 20px;
+    background-color: #FFFAEF;
+    border: 2px solid #FFFAEF;
+    width: 100px;
+}
+
+#return-button:hover {
+    color: #1d307e;
+    cursor: pointer;
+}
+
+#cancel-button:hover {
+    color: #FFFAEF;
+    background-color: #10162F;
+    cursor: pointer;
 }
 
 .fit-content {
@@ -223,4 +285,60 @@ td {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.form-container {
+    background-color: #9aa9e1;
+    margin: auto;
+    margin-top: 0px;
+    color: black;
+    padding: 20px 50px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.form-container p {
+    color: red;
+}
+
+.form-title h1 {
+    font-size: 35px;
+}
+
+.form-content {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: flex-start;
+    width: 100%;
+    gap: 15px;
+}
+
+.form-content label { 
+    font-size: 25px;
+    text-align: right; 
+}
+.form-content label::after { content: ":"; }
+
+.center-form {
+    align-items: center;
+}
+
+.dark-border-thick {
+    border-width: 2px;
+    border-color: #10162f;
+}
+
+.shrink {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.gap-top {
+    margin-top: 20px;
 }

@@ -30,12 +30,11 @@
                 </div>
                 <table>
                     <colgroup>
-                        <col style="width: 22%;">
-                        <col style="width: 22%;">
+                        <col style="width: 24%;">
+                        <col style="width: 28%;">
                         <col style="width: 22%;">
                         <col style="width: 13%;">
                         <col style="width: 13%;">
-                        <col style="width: 8%;">
                     </colgroup>
                     <thead>
                         <tr>
@@ -44,7 +43,6 @@
                             <th>Instructors</th>
                             <th>Start Date</th>
                             <th>End Date</th>
-                            <th>Rating</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -54,7 +52,6 @@
                             <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
                             <td class="fit">07-06-2023</td>
                             <td class="fit">29-06-2023</td>
-                            <td>4.7</td>
                         </tr>
                         <tr>
                             <td class="overflow">Software Engineering Fundamentals</td>
@@ -62,7 +59,6 @@
                             <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
                             <td class="fit">07-06-2023</td>
                             <td class="fit">29-06-2023</td>
-                            <td>4.7</td>
                         </tr>
                         <tr>
                             <td class="overflow">The Power of Motivation</td>
@@ -70,7 +66,6 @@
                             <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
                             <td class="fit">07-06-2023</td>
                             <td class="fit">29-06-2023</td>
-                            <td>4.7</td>
                         </tr>
                     </tbody>
                 </table>
