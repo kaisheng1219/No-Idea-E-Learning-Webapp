@@ -1,7 +1,3 @@
-<?php 
-    require_once "includes/connection.inc.php";
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +18,7 @@
 </head>
 
 <body>
-    <?php require_once "header-landing.php"; ?>
+    <?php require_once "header.php"; ?>
     <main>
         <section class="form-container">
             <div class="form-title">
@@ -39,7 +35,7 @@
                     </div>
                     <?php
                         if(isset($_GET["error"]))
-                            echo "<p>Credentials not found!</p>";
+                            echo "<p>".$_GET['error']."</p>";
                     ?>  
                     <button type="submit" name="login">Login</button>
 

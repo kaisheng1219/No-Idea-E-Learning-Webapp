@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <?php require_once "header-landing.php"; ?>
+    <?php require_once "header.php"; ?>
     <main>
         <section id="hero-section">
             <div class="left">

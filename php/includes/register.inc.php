@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     require_once "connection.inc.php";
     require_once "functions.inc.php";
 
-    if (pwdMatch($pwd, $pwdRepeat) !== false) {
+    if (!pwdMatch($pwd, $pwdRepeat)) {
         header("location: ../register.php?error=passwordsDontMatch");
         exit();
     }

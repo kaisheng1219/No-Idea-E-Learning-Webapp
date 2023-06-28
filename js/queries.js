@@ -1,3 +1,0 @@
-function getStudent() {
-    var sql = ""
-}
