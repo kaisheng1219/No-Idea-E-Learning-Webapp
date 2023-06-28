@@ -16,6 +16,7 @@ header {
     width: 100%;
     font-weight: bold;
     background-color: #10162F;
+    align-items: center;
     z-index: 999;
 }
 
@@ -29,31 +30,46 @@ a {
 }
 
 nav {
+    display: flex;
     margin: 0 12%;
 }
 
 ul {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
     list-style-type: none;
 }
 
 li {
     color: #787373;
     text-transform: uppercase;
-    display: inline-block;
-    margin-right: 0;
+}
+
+ul > :nth-last-child(2) {
+    margin-left: auto;
+}
+
+ul > :nth-last-child a {
+    margin-left: auto;
+}
+
+ul > :nth-last-child(3) {
+    margin-right: auto;
 }
 
 footer {
     width: 100%;
     font-weight: bold;
     background-color: #10162F;
-    margin: 2% 0;
-    margin-top: auto;
+    margin: 20px 0;
 }
 
 #logo {
     position: relative;
-    top: 9px;
+    top: 14px;
 }
 #logo img {
     cursor: pointer;
@@ -70,7 +86,6 @@ footer {
 }
 #footer-logo img {
     cursor: pointer;
-    margin-top: 10px;
     width: 100px;
     height: 70px;
     object-fit: contain;
@@ -84,26 +99,25 @@ footer {
     text-align: center;
 }
 #footer-info .contact-details-icons i {
-    margin: 20px 20px;
+    margin: 20px 20px 0 20px;
 }
 
 .main-nav-item {
-    padding: 0.5cm 2%;
+    width: max-content;
+    height: auto;
 }
 .main-nav-item a {
+    height: 100%;
+    display: block;
+    padding: 20px 30px;
     color: #CBCBCB;
 }
-.main-nav-item:hover {
+.main-nav-item a:hover {
     background-color: #FEBD2F;
     cursor: pointer;
-}
-.main-nav-item:hover a{
     color: #000000;
 }
 
-.right {
-    float: right;
-}
 .oval-button {
     margin: 8px 0;
     margin-left: 8px;
