@@ -6,7 +6,7 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $pwd = $_POST["password"];
     $pwdRepeat = $_POST["pwdRepeat"];
-    
+
     require_once "connection.inc.php";
     require_once "functions.inc.php";
 
@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    createStudent($connect, $name, $age, $email, $password);
+    createStudent($connect, $name, $age, $email, $pwd);
 } else {
     header("location: ../register.php");
     exit();
