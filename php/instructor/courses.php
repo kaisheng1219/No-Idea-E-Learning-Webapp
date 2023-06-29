@@ -1,9 +1,20 @@
 <?php require_once "header.php" ?>
     <main>
         <?php 
-            if (isset($_GET['del'])) {
+            if (isset($_GET['xmark'])) {
                 $courseId = $_GET['courseId'];
-                $sql = "DELETE FROM course WHERE course_id = $courseId;";
+                $instructorId = $instructor['instructor_id'];
+                $sql = "UPDATE `instructor_course` SET `availability`=FALSE WHERE `instructor_id`=$instructorId AND `course_id`=$courseId;";
+                $result = mysqli_query($connect, $sql);
+                if (!$result) {
+                    header("location: courses.php?button=courses");
+                    exit();
+                }
+                header("location: courses.php?button=courses");
+            } else if (isset($_GET['tick'])) {
+                $courseId = $_GET['courseId'];
+                $instructorId = $instructor['instructor_id'];
+                $sql = "UPDATE `instructor_course` SET `availability`=TRUE WHERE `instructor_id`=$instructorId AND `course_id`=$courseId;";
                 $result = mysqli_query($connect, $sql);
                 if (!$result) {
                     header("location: courses.php?button=courses");
@@ -18,14 +29,11 @@
                 <p>Courses</p>
             </div>
             <div class="table-container">
-                <div class="button-container">
-                    <a href="course_add.php?button=courses">add course</a>
-                </div>
                 <table>
                     <colgroup>
-                        <col style="width: 22%;">
-                        <col style="width: 22%;">
-                        <col style="width: 20%;">
+                        <col style="width: 24%;">
+                        <col style="width: 27%;">
+                        <col style="width: 13%;">
                         <col style="width: 13%;">
                         <col style="width: 13%;">
                         <col style="width: 10%;">
@@ -34,22 +42,14 @@
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Instructors</th>
                             <th>Start Date</th>
                             <th>End Date</th>
+                            <th>Availability</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php populateCoursesTable($connect, $courses, true); ?>
-
-                        <tr>    
-                            <td colspan="6" class="add-button">
-                                <a href="course_add.php?button=courses">
-                                    <i class="fa fa-add"></i>
-                                </a>
-                            </td>
-                        </tr> 
+                        <?php populateInstructorCoursesTable($connect, $courses, true); ?>
                     </tbody>
                 </table>
             </div>

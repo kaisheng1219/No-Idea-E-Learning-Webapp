@@ -135,3 +135,11 @@ footer {
     background-color: #fdb51b;
     cursor: pointer;
 }
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}

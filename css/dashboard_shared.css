@@ -288,7 +288,7 @@ input[type="checkbox"] {
 }
 
 .form-container {
-    background-color: #9aa9e1;
+    background-color: #c8d3fc;
     margin: auto;
     margin-top: 0px;
     color: black;
@@ -300,10 +300,6 @@ input[type="checkbox"] {
     gap: 30px;
     border-radius: 10px;
     width: 100%;
-}
-
-.form-container p {
-    color: red;
 }
 
 .form-title h1 {
@@ -327,6 +323,37 @@ input[type="checkbox"] {
 .center-form {
     align-items: center;
 }
+.actions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.actions i:hover {
+    color: blue;
+}
+
+.add-button {
+    padding: 0;
+    background-color:transparent;
+}
+.add-button a {
+    display: block;
+    padding: 5px 20px;
+    width: 100%;
+}
+
+.add-button a:hover {
+    background-color: #10162F;
+}
+
+.add-button a:hover i {
+    color: white;
+}
 
 .dark-border-thick {
     border-width: 2px;
@@ -341,4 +368,13 @@ input[type="checkbox"] {
 
 .gap-top {
     margin-top: 20px;
+}
+
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
 }

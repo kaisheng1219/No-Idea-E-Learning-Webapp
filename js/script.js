@@ -15,4 +15,13 @@ function addPasswordEL() {
     });
 }
 
+function toggleButtonOn(btnName) {
+    document.getElementById(btnName).classList.toggle("active");
+}
+
+function confirmation() {
+    answer = confirm("Do you really want to delete?");
+    return answer;
+}
+
 window.addEventListener("load", addPasswordEL);

@@ -1,20 +1,20 @@
 <?php require_once "header.php" ?>
     <main class="shrink">
         <section class="return-section">
-            <a id="return-button" href="instructors.php?button=instructors">Return</a> 
+            <a id="return-button" href="providers.php?button=providers">Return</a> 
         </section>
 
-        <section id="instructor-add" class="form-container">
+        <section id="provider-add" class="form-container">
             <div class="form-title">
-                <h1>Add Instructor</h1>
+                <h1>Add Provider</h1>
             </div>
-            <form method="post" action="../includes/instructor_add.inc.php">
+            <form method="post" action="../includes/provider_add.inc.php">
                 <div class="form-content">
                     <label>Name</label>
-                    <input name="name" type="text" placeholder="Enter instructor's name" required>
+                    <input name="name" type="text" placeholder="Enter provider's name" required>
 
                     <label>Email</label>
-                    <input name="email" type="email" placeholder="Enter instructor's email" required></input>
+                    <input name="email" type="email" placeholder="Enter provider's email" required></input>
 
                     <label>Password</label>
                     <input name="password" type="password" required>
@@ -27,10 +27,10 @@
                     if (isset($_GET["error"]))
                         echo "<p class='red'>".$_GET['error']."<p>";
                     else if (isset($_GET["success"]))
-                        echo "<p class='green'>Successfully added instructor<p>";
+                        echo "<p class='green'>Account created<p>";
                 ?>
                 <div>
-                    <a id="cancel-button" href="instructors.php?button=instructors">Cancel</a>
+                    <a id="cancel-button" href="providers.php?button=providers">Cancel</a>
                     <button type="submit" name="add">Add</button>
                 </div>
             </form>

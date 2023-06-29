@@ -1,5 +1,17 @@
 <?php require_once "header.php" ?>
     <main>
+    <?php 
+        if (isset($_GET['del'])) {
+            $instructorId = $_GET['instructorId'];
+            $sql = "DELETE FROM instructor WHERE instructor_id = $instructorId;";
+            $result = mysqli_query($connect, $sql);
+            if (!$result) {
+                header("location: instructors.php?button=instructors");
+                exit();
+            }
+            header("location: instructors.php?button=instructors");
+        }
+    ?>
     <section id="instructors">
         <div class="label">
             <span class="material-icons">groups</span>
@@ -19,21 +31,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="overflow">Emily Zying</td>
-                        <td class="overflow">zincO2@gmail.com</td>
-                        <td>20</td>
-                        <td>
-                            <div class="actions">
-                                <a href="course_edit.php?courseId=">
-                                    <i class="fa fa-pen-to-square"></i>
-                                </a>
-                                <a href="courses.php?del&courseId=">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                        <?php populateInstructorsTable($connect, $instructors, true, false); ?>
                     <tr>
                         <td colspan="4" class="add-button">
                             <a href="instructor_add.php?button=instructors">

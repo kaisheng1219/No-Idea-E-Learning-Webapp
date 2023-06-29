@@ -8,7 +8,7 @@
             <form method="post" action="../includes/profile_edit.inc.php" class="gap-top">
                 <div class="form-content center-form">
                     <label>Name</label>
-                    <input name="name" type="text" value="<?= $provider['provider_name']; ?>" readonly disabled>
+                    <input name="name" type="text" value="<?= $instructor['instructor_name']; ?>" readonly disabled>
 
                     <label>Email</label>
                     <input name="email" type="email" value="<?= $_SESSION['user_email']; ?>" readonly disabled></input>

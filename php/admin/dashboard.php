@@ -8,14 +8,40 @@
             <div class="content">
                 <div class="first card fit-content">
                     <span class="material-icons">groups</span>
+                    <p class="title">Total Providers</p>
+                    <p class="value">1000</p>
+                </div>
+                <div class="first card fit-content">
+                    <span class="material-icons">groups</span>
                     <p class="title">Total Instructors</p>
-                    <p class="value"><?= mysqli_num_rows($instructors); ?></p>
+                    <p class="value">100</p>
                 </div>
-                <div class="second card fit-content">
-                    <span class="material-icons">book</span>
-                    <p class="title">Total Courses</p>
-                    <p class="value"><?= mysqli_num_rows($courses); ?></p>
+            </div>
+        </section>
+
+        <section id="providers">
+            <div class="label">
+                <span class="material-icons">groups</span>
+                <p>Providers</p>
+            </div>
+            <div class="table-container">
+                <div class="button-container">
+                    <a href="providers.php?button=providers">manage</a>
                 </div>
+                <table>
+                    <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Email</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="overflow">Google</td>
+                          <td class="overflow">google@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -46,9 +72,7 @@
                           </tr>
                       </thead>
                       <tbody>
-                        <?php populateCoursesTable($connect, $courses, false); ?>
-
-                        <!-- <tr>
+                        <tr>
                             <td class="overflow">Theory of Computation</td>
                             <td class="overflow">A course about how to get rich. asasjsjsjsjsjd ajsdjasdj asjdaj asdj asj asd jasd jas j</td>
                             <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
@@ -68,7 +92,7 @@
                             <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
                             <td class="fit">07-06-2023</td>
                             <td class="fit">29-06-2023</td>
-                        </tr> -->
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -92,12 +116,11 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php populateInstructorsTable($connect, $instructors, false, false); ?>
-                        <!-- <tr>
+                        <tr>
                           <td class="overflow">Emily Zying</td>
                           <td class="overflow">zincO2@gmail.com</td>
                           <td>20</td>
-                        </tr> -->
+                        </tr>
                     </tbody>
                 </table>
             </div>

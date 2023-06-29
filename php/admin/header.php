@@ -1,15 +1,3 @@
-<?php
-    require_once '../includes/connection.inc.php';
-    require_once '../includes/functions.inc.php';
-    session_start();
-
-    $provider = getRoleInfoFromUserId($connect, $_SESSION['user_id'], $_SESSION['user_role']);
-    $_SESSION['provider_id'] = $provider['provider_id'];
-    
-    $courses = getCoursesByProviderId($connect, $_SESSION['provider_id']);
-    $instructors = getInstructorsByProviderId($connect, $_SESSION['provider_id']);
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,8 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/dashboard_shared.css">  
+    <link rel="stylesheet" href="../../css/provider.css">
 
-    <script src="../../js/script.js" type="text/javascript"></script>
+    <script src="../../js/provider.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -40,14 +29,14 @@
                 <li id="dashboard">
                     <a href="dashboard.php?button=dashboard">Dashboard</a>
                 </li>
+                <li id="providers">
+                    <a href="providers.php?button=providers">Providers</a>
+                </li>
                 <li id="courses">
                     <a href="courses.php?button=courses">Courses</a>
                 </li>
                 <li id="instructors">
                     <a href="instructors.php?button=instructors">Instructors</a>
-                </li>
-                <li id="profile">
-                    <a href="profile.php?button=profile">Profile</a>
                 </li>
                 <li>
                     <a href="../includes/logout.inc.php">Logout</a>

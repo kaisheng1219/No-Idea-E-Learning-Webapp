@@ -3,11 +3,11 @@
     require_once '../includes/functions.inc.php';
     session_start();
 
-    $provider = getRoleInfoFromUserId($connect, $_SESSION['user_id'], $_SESSION['user_role']);
-    $_SESSION['provider_id'] = $provider['provider_id'];
-    
-    $courses = getCoursesByProviderId($connect, $_SESSION['provider_id']);
-    $instructors = getInstructorsByProviderId($connect, $_SESSION['provider_id']);
+    $instructor = getRoleInfoFromUserId($connect, $_SESSION['user_id'], $_SESSION['user_role']);
+    $_SESSION['instructor_id'] = $instructor['instructor_id'];
+
+    $courses = getCoursesByInstructorId($connect, $_SESSION['instructor_id']);
+    $students = getStudentsByInstructorId($connect, $instructor['instructor_id']);
 ?>
 
 <!doctype html>
@@ -42,9 +42,6 @@
                 </li>
                 <li id="courses">
                     <a href="courses.php?button=courses">Courses</a>
-                </li>
-                <li id="instructors">
-                    <a href="instructors.php?button=instructors">Instructors</a>
                 </li>
                 <li id="profile">
                     <a href="profile.php?button=profile">Profile</a>
