@@ -9,12 +9,12 @@
                 <div class="first card fit-content">
                     <span class="material-icons">groups</span>
                     <p class="title">Total Providers</p>
-                    <p class="value">1000</p>
+                    <p class="value"><?= mysqli_num_rows($providers); ?></p>
                 </div>
                 <div class="first card fit-content">
                     <span class="material-icons">groups</span>
                     <p class="title">Total Instructors</p>
-                    <p class="value">100</p>
+                    <p class="value"><?= mysqli_num_rows($instructors); ?></p>
                 </div>
             </div>
         </section>
@@ -36,10 +36,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td class="overflow">Google</td>
-                          <td class="overflow">google@gmail.com</td>
-                        </tr>
+                        <?php populateProvidersTable($providers, false); ?>
                     </tbody>
                 </table>
             </div>
@@ -56,43 +53,23 @@
                 </div>
                 <table>
                     <colgroup>
-                        <col style="width: 24%;">
                         <col style="width: 28%;">
-                        <col style="width: 22%;">
+                        <col style="width: 28%;">
                         <col style="width: 13%;">
                         <col style="width: 13%;">
+                        <col style="width: 18%;">
                     </colgroup>
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Instructors</th>
                             <th>Start Date</th>
                             <th>End Date</th>
-                          </tr>
+                            <th>Provider</th>
+                        </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                            <td class="overflow">Theory of Computation</td>
-                            <td class="overflow">A course about how to get rich. asasjsjsjsjsjd ajsdjasdj asjdaj asdj asj asd jasd jas j</td>
-                            <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
-                            <td class="fit">07-06-2023</td>
-                            <td class="fit">29-06-2023</td>
-                        </tr>
-                        <tr>
-                            <td class="overflow">Software Engineering Fundamentals</td>
-                            <td class="overflow">A course about how to get rich. asasjsjsjsjsjd ajsdjasdj asjdaj asdj asj asd jasd jas j</td>
-                            <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
-                            <td class="fit">07-06-2023</td>
-                            <td class="fit">29-06-2023</td>
-                        </tr>
-                        <tr>
-                            <td class="overflow">The Power of Motivation</td>
-                            <td class="overflow">A course about how to get rich. asasjsjsjsjsjd ajsdjasdj asjdaj asdj asj asd jasd jas j</td>
-                            <td class="overflow">Peter Pan, De Broglie, Albert Einstein</td>
-                            <td class="fit">07-06-2023</td>
-                            <td class="fit">29-06-2023</td>
-                        </tr>
+                        <?php populateAdminCoursesTable($courses, false); ?>
                     </tbody>
                 </table>
             </div>
@@ -112,16 +89,12 @@
                         <tr>
                           <th>Name</th>
                           <th>Email</th>
-                          <th>Total Course (Teaching)</th>
+                          <th>Provider</th>
                         </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="overflow">Emily Zying</td>
-                          <td class="overflow">zincO2@gmail.com</td>
-                          <td>20</td>
-                        </tr>
-                    </tbody>
+                    </thead>
+                        <tbody>
+                            <?php populateAdminInstructorsTable($instructors, false); ?>
+                        </tbody>
                 </table>
             </div>
         </section>

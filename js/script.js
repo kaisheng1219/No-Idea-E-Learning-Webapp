@@ -19,6 +19,16 @@ function toggleButtonOn(btnName) {
     document.getElementById(btnName).classList.toggle("active");
 }
 
+function checkboxValidation() {
+    checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    if (Array.from(checkboxes).some(checkbox => checkbox.checked))
+        return true;
+    else {
+        alert("Please select at least one instructor.");
+        return false;
+    }
+}
+
 function confirmation() {
     answer = confirm("Do you really want to delete?");
     return answer;

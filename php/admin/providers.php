@@ -1,5 +1,17 @@
 <?php require_once "header.php" ?>
     <main>
+    <?php 
+        if (isset($_GET['del'])) {
+            $providerId = $_GET['providerId'];
+            $sql = "DELETE FROM `provider` WHERE provider_id = $providerId;";
+            $result = mysqli_query($connect, $sql);
+            if (!$result) {
+                header("location: providers.php?button=providers");
+                exit();
+            }
+            header("location: providers.php?button=providers");
+        }
+    ?>
     <section id="providers">
         <div class="label">
             <span class="material-icons">groups</span>
@@ -18,20 +30,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="overflow">Google</td>
-                        <td class="overflow">google@gmail.com</td>
-                        <td>
-                            <div class="actions">
-                                <a href="provider_edit.php?courseId=">
-                                    <i class="fa fa-pen-to-square"></i>
-                                </a>
-                                <a href="providers.php?del&courseId=">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                        <?php populateProvidersTable($providers, true); ?>
                     <tr>
                         <td colspan="3" class="add-button">
                             <a href="provider_add.php?button=providers">

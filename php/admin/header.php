@@ -1,3 +1,14 @@
+<?php
+    require_once '../includes/connection.inc.php';
+    require_once '../includes/functions.inc.php';
+    session_start();
+    
+    $providers = getAllProviders($connect); // all providers info and user info
+    $courses = getAllCourses($connect); // all courses info and provider info
+    $instructors = getAllInstructors($connect); // all instructors and their company
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,11 +25,11 @@
     <link rel="stylesheet" href="../../css/dashboard_shared.css">  
     <link rel="stylesheet" href="../../css/provider.css">
 
-    <script src="../../js/provider.js" type="text/javascript"></script>
+    <script src="../../js/script.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <header>
+    <header class="sidebar">
         <nav>
             <div id="logo">
                 <a href="dashboard.php">

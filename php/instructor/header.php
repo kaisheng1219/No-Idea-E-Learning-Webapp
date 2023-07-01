@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="sidebar">
         <nav>
             <div id="logo">
                 <a href="dashboard.php">
@@ -42,6 +42,9 @@
                 </li>
                 <li id="courses">
                     <a href="courses.php?button=courses">Courses</a>
+                </li>
+                <li id="students">
+                    <a href="students.php?button=students">Students</a>
                 </li>
                 <li id="profile">
                     <a href="profile.php?button=profile">Profile</a>

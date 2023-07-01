@@ -13,7 +13,7 @@
             <div class="form-title">
                 <h1>Edit Course</h1>
             </div>
-            <form method="post" action="../includes/course_edit.inc.php">
+            <form method="post" action="../includes/course_edit.inc.php" onsubmit="return checkboxValidation();">
                 <div class="form-content">
                     <label>Title</label>
                     <input name="title" type="text" value="<?= $course['course_title']; ?>" required>

@@ -41,6 +41,28 @@
     align-items: center;
 }
 
+.course-card-instructors ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    list-style-type: none;
+    height: auto;
+    flex-grow: 0;
+}
+
+.course-card-instructors ul > :nth-last-child(2) {
+    margin-left: 0;
+}
+
+.course-card-instructors ul > :nth-last-child a {
+    margin-left: 0;
+}
+
+.course-card-instructors ul > :nth-last-child(3) {
+    margin-right: 0;
+}
+
 .course-card-instructors li {
     color: black;
     padding-right: 10px;
@@ -53,4 +75,33 @@
 .course-card-details-company {
     float: right;
     font-weight: bold;
+}
+
+.instructors-list li {
+    font-size: 20px;
+}
+
+.course-card-info * {
+    font-size: 20px;
+}
+
+.title-progress-container {
+    background-color: #83C5BE;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.title-progress-container span {
+    margin-left: auto;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #10162f;
+}
+
+.smaller {
+    font-size: 20px;
 }

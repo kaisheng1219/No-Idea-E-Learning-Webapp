@@ -3,11 +3,13 @@
     require_once '../includes/functions.inc.php';
     session_start();
 
-    $provider = getRoleInfoFromUserId($connect, $_SESSION['user_id'], $_SESSION['user_role']);
-    $_SESSION['provider_id'] = $provider['provider_id'];
-    
-    $courses = getCoursesByProviderId($connect, $_SESSION['provider_id']);
-    $instructors = getInstructorsByProviderId($connect, $_SESSION['provider_id']);
+    $student = getRoleInfoFromUserId($connect, $_SESSION['user_id'], $_SESSION['user_role']);
+    $_SESSION['student_id'] = $student['student_id'];
+
+    $registeredCourses = getRegisteredCoursesByStudentId($connect, $_SESSION['student_id']);
+    $ongoingCourses = getOngoingCoursesByStudentId($connect, $_SESSION['student_id']);
+    $completedCourses = getCompletedCoursesByStudentId($connect, $_SESSION['student_id']);
+    $courses = getAllCourses($connect);
 ?>
 
 <!doctype html>
@@ -23,7 +25,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/course_card.css">  
     <link rel="stylesheet" href="../../css/dashboard_shared.css">  
+    <link rel="stylesheet" href="../../css/student.css">  
 
     <script src="../../js/script.js" type="text/javascript"></script>
 </head>
@@ -42,9 +46,6 @@
                 </li>
                 <li id="courses">
                     <a href="courses.php?button=courses">Courses</a>
-                </li>
-                <li id="instructors">
-                    <a href="instructors.php?button=instructors">Instructors</a>
                 </li>
                 <li id="profile">
                     <a href="profile.php?button=profile">Profile</a>

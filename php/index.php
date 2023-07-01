@@ -1,4 +1,8 @@
-<?php require_once "includes/connection.inc.php"; ?>
+<?php 
+    require_once "includes/connection.inc.php"; 
+    require_once "includes/functions.inc.php"; 
+    $courses = getAllCourses($connect);
+?>
 
 <!doctype html>
 <html lang="en">
@@ -15,7 +19,7 @@
     <link rel="stylesheet" href="../css/reset.css"> 
     <link rel="stylesheet" href="../css/index_shared.css"> 
     <link rel="stylesheet" href="../css/landing.css"> 
-    <link rel="stylesheet" href="../css/course-card.css">     
+    <link rel="stylesheet" href="../css/course_card.css">     
 </head>
 
 <body>
@@ -25,7 +29,7 @@
             <div class="left">
                 <h1>Start learning today</h1>
                 <p>Our courses are provided by prominent companies and top universities, and it's still increasing.</p>    
-                <button>Start Learning Now</button>
+                <button onclick="window.location.href='login.php'">Start Learning Now</button>
             </div>
             <div class="right">
                 <image src="../images/hero/Learning Image.png" alt="Learning image">
@@ -36,131 +40,21 @@
                 </div>
             </div>
         </section>
-        <form id="courses-section">
-            <div class="top">
-                <h2>COURSES</h2>
-                <div class="search-container">
-                    <span class="material-icons search-icon">search</span>
-                    <input type="search" class="search-input" placeholder="Search courses you interested in...">
+        <section id="courses-section">
+            <form method="get" action="">
+                <div class="top">
+                    <h2>COURSES</h2>
                 </div>
-            </div>
+            </form>
             <div class="middle">
-                <div class="left">
-                    <button class="courses-tag-button">
-                        <span class="material-icons">microwave</span>
-                        <span class="tag-name">Cooking</span>
-                    </button>
-                    <button class="courses-tag-button">
-                        <span class="material-icons">palette</span>
-                        <span class="tag-name">Art</span>
-                    </button>
-                    <button class="courses-tag-button">
-                        <span class="material-icons">music_note</span>
-                        <span class="tag-name">Music</span>
-                    </button>
-                    <button class="courses-tag-button">
-                        <span class="material-icons">laptop</span>
-                        <span class="tag-name">Programming</span>
-                    </button>
-                    <button class="courses-tag-button">
-                        <span class="material-icons">sports_tennis</span>
-                        <span class="tag-name">Exercising</span>
-                    </button>                
-                </div>
-                <div class="right">
-                    <div class="course-card">
-                        <h4 class="course-card-title">Interior Design Course</h4>
-                        <p class="course-card-description">
-                            Teaches the principles and techniques of creating functional and aesthetically pleasing indoor spaces, encompassing aspects such as spatial planning, color schemes, furniture selection, and lighting design.
-                        </p>
-                        <div class="details-container">
-                            <div class="course-card-instructors">
-                                <i class="fa-solid fa-user "></i>
-                                <ul>
-                                    <li>Peter Pan</li>
-                                    <li>Albert Einstein</li>
-                                    <li>De Broglie</li>
-                                </ul>
-                            </div>
-                            <div class="course-card-info">
-                                <i class="fa-solid fa-calendar"></i>
-                                <span class="course-card-details-date">12/06/2023 - 20/07/2023</span>
-                                <span class="course-card-details-company">Google</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h4 class="course-card-title">Interior Design Course</h4>
-                        <p class="course-card-description">
-                            Teaches the principles and techniques of creating functional and aesthetically pleasing indoor spaces.
-                        </p>
-                        <div class="details-container">
-                            <div class="course-card-instructors">
-                                <i class="fa-solid fa-user "></i>
-                                <ul>
-                                    <li>Peter Pan</li>
-                                    <li>Albert Einstein</li>
-                                    <li>De Broglie</li>
-                                </ul>
-                            </div>
-                            <div class="course-card-info">
-                                <i class="fa-solid fa-calendar"></i>
-                                <span class="course-card-details-date">12/06/2023 - 20/07/2023</span>
-                                <span class="course-card-details-company">Google</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h4 class="course-card-title">Interior Design Course</h4>
-                        <p class="course-card-description">
-                            Teaches the principles and techniques of creating functional and aesthetically pleasing indoor spaces, encompassing aspects such as spatial planning, color schemes, furniture selection, and lighting design.
-                        </p>
-                        <div class="details-container">
-                            <div class="course-card-instructors">
-                                <i class="fa-solid fa-user "></i>
-                                <ul>
-                                    <li>Peter Pan</li>
-                                    <li>Albert Einstein</li>
-                                    <li>De Broglie</li>
-                                </ul>
-                            </div>
-                            <div class="course-card-info">
-                                <i class="fa-solid fa-calendar"></i>
-                                <span class="course-card-details-date">12/06/2023 - 20/07/2023</span>
-                                <span class="course-card-details-company">Google</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h4 class="course-card-title">Interior Design Course</h4>
-                        <p class="course-card-description">
-                            Teaches the principles and techniques of creating functional and aesthetically pleasing indoor spaces, encompassing aspects such as spatial planning, color schemes, furniture selection, and lighting design.
-                        </p>
-                        <div class="details-container">
-                            <div class="course-card-instructors">
-                                <i class="fa-solid fa-user "></i>
-                                <ul>
-                                    <li>Peter Pan</li>
-                                    <li>Albert Einstein</li>
-                                    <li>De Broglie</li>
-                                </ul>
-                            </div>
-                            <div class="course-card-info">
-                                <i class="fa-solid fa-calendar"></i>
-                                <span class="course-card-details-date">12/06/2023 - 20/07/2023</span>
-                                <span class="course-card-details-company">Google</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="course-cards-container">
+                    <?php populateIndexCoursesSection($connect, $courses, true); ?>
                 </div>
             </div>
             <div class="bottom">
-                <button>Show all courses</button>
+                <button onclick="window.location.href='courses.php'">Show all courses</button>
             </div>
-        </form>
+        </section>
         <section id="about-us-section">
             <div class="left">
                 <img src="../images/logo big.png" alt="logo">

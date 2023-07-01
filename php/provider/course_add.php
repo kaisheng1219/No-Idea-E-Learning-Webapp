@@ -8,7 +8,7 @@
             <div class="form-title">
                 <h1>Add Course</h1>
             </div>
-            <form method="post" action="../includes/course_add.inc.php">
+            <form method="post" action="../includes/course_add.inc.php" onsubmit="return checkboxValidation(this);">
                 <div class="form-content">
                     <label>Title</label>
                     <input name="title" type="text" placeholder="Enter a title" required>

@@ -58,20 +58,16 @@
                 <p>Students</p>
             </div>
             <div class="table-container">
-                <div class="button-container">
-                    <a href="students.php?button=students">manage</a>
-                </div>
                 <table>
                     <thead>
                         <tr>
                           <th>Name</th>
                           <th>Age</th>
-                          <th>Email</th>
                           <th>Course Taken</th>
                         </tr>
-                      </thead>
-                      <tbody>
-
+                    </thead>
+                    <tbody>
+                        <?php populateInstructorStudentsTable($connect, $students); ?>
                     </tbody>
                 </table>
             </div>
