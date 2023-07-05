@@ -370,7 +370,7 @@ function populateRegistrationCoursesSection($connect, $courses, $registeredCours
             }
 
         if (!$registered)   
-            echo     "<span><a href='courses.php?button=courses&register&courseId=" . $row['course_id'] . "'>register</a></span>";
+            echo     "<span><a href='../includes/student_course_add.inc.php?register&courseId=" . $row['course_id'] . "'>register</a></span>";
 
         echo    '</div>';
         echo    "<p class='course-card-description'>" . $row['course_description'] . "</p>";

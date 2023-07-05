@@ -1,18 +1,10 @@
 <?php require_once "header.php" ?>
     <main>
         <?php
-            if (isset($_GET['register'])) {
-                $courseId = $_GET['courseId'];
-                $studentId = $_SESSION['student_id'];
-                $sql = "INSERT INTO student_course VALUES('$studentId', '$courseId', 0);";
-                $result = mysqli_query($connect, $sql);
-                if (!$result) {
-                    header("location: courses.php?button=courses&error");
-                    exit();
-                } else {
-                    header("location: courses.php?button=courses&success");
-                    exit();
-                }
+            if (isset($_GET['success'])) {
+                echo '<script> alert("Successfully registered.");';
+                echo 'window.location.replace("courses.php?button=courses");';
+                echo '</script>';
             }
         ?>
         <section id="courses-search-section">
@@ -39,14 +31,6 @@
                             populateRegistrationCoursesSection($connect, $filteredCourses, $registeredCourses);
                     } else {
                         populateRegistrationCoursesSection($connect, $courses, $registeredCourses);
-                    }
-                ?>
-                <?php 
-                    if (isset($_GET['success'])) { ?>
-                    <script> alert("Successfully registered."); </script>
-                <?php
-                        header("location: courses.php?button=courses");
-                        exit();
                     }
                 ?>
             </div>

@@ -6,7 +6,6 @@
 
         <section id="course-edit" class="form-container">
             <?php 
-                session_start();
                 $course = getCourseByCourseId($connect, $_GET['courseId']);
                 $_SESSION['course_id'] = $_GET['courseId'];
             ?>

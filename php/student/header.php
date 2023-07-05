@@ -1,6 +1,7 @@
 <?php
     require_once '../includes/connection.inc.php';
     require_once '../includes/functions.inc.php';
+    
     session_start();
 
     $student = getRoleInfoFromUserId($connect, $_SESSION['user_id'], $_SESSION['user_role']);
